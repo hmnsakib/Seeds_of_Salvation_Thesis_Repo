@@ -5,7 +5,13 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Camera/CameraComponent.h"
+#include "Components/CapsuleComponent.h"
+#include "Components/StaticMeshComponent.h"
+#include "Components/InputComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
+#include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Blueprint/UserWidget.h"
 #include "MyCharacter.generated.h"
 
 UCLASS()
@@ -14,21 +20,8 @@ class SEEDSOFSALVATION_API AMyCharacter : public ACharacter
 	GENERATED_BODY()
 
 public:
-
+	// Sets default values for this character's properties
 	AMyCharacter();
-
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
-	USpringArmComponent* CameraBoom;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
-	UCameraComponent* FollowCamera;
-
-	void MoveForward(float Axis);
-	void MoveRight(float Axis);
-
-	UPROPERTY(BlueprintReadWrite, Category = "State")
-	bool bDead;
 
 protected:
 	// Called when the game starts or when spawned
@@ -40,4 +33,19 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	// Camera components
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
+	USpringArmComponent* CameraBoom;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
+	UCameraComponent* FollowCamera;
+
+	// Movement functions
+	void MoveForward(float Axis);
+	void MoveRight(float Axis);
+
+	// Example state variable
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Character State")
+	bool bDead;
 };
