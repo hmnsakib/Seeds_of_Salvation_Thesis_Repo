@@ -23,7 +23,7 @@ AMyCharacter::AMyCharacter()
 	// Configure character movement
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.f, 540.f, 0.f);
-	GetCharacterMovement()->JumpZVelocity = 600.f;
+	GetCharacterMovement()->JumpZVelocity = jump_Hight;
 	GetCharacterMovement()->AirControl = 0.2f;
 
 	// Create camera boom
