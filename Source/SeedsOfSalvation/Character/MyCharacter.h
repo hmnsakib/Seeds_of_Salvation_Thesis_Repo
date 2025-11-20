@@ -48,4 +48,6 @@ public:
 	// Example state variable
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Character State")
 	bool bDead;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Character State")
+	float jump_Hight = 500.f;
 };
