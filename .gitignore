@@ -5,9 +5,8 @@
 # Do not ignore git files in the root of the repo.
 !/.git*
 
-# Do not ignore current project's `.uproject` and `.sln`.
+# Do not ignore current project's `.uproject`.
 !/*.uproject
-!/*.sln
 
 # Do not ignore source, config and plugins dirs.
 !/Source/**
